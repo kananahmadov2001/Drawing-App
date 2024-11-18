@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KananAhmadov_Lab_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vg3-za-KZN">
+                                <rect key="frame" x="0.0" y="44" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Drawing App!" id="U2a-Fs-nte">
+                                        <leftBarButtonItems>
+                                            <barButtonItem title="Undo" image="arrow.uturn.backward.circle.fill" catalog="system" id="gaj-lm-FTQ">
+                                                <connections>
+                                                    <action selector="undoButtonTapped:" destination="BYZ-38-t0r" id="Oxg-Py-4yu"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Redo" image="arrow.uturn.forward.circle.fill" catalog="system" id="mes-5H-vZc">
+                                                <connections>
+                                                    <action selector="redoButtonTapped:" destination="BYZ-38-t0r" id="JpN-SI-wZA"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </leftBarButtonItems>
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="Clear All" image="clear.fill" catalog="system" id="syV-yF-LYq">
+                                                <connections>
+                                                    <action selector="clearCanvasTapped:" destination="BYZ-38-t0r" id="zDb-df-94F"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" image="doc.on.doc.fill" catalog="system" id="RBV-Qd-9lw">
+                                                <connections>
+                                                    <action selector="duplicateButtonTapped:" destination="BYZ-38-t0r" id="wIp-i8-1Oy"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" image="square.and.arrow.down.fill" catalog="system" id="34K-jg-ZiE">
+                                                <connections>
+                                                    <action selector="saveButtonTapped:" destination="BYZ-38-t0r" id="T2o-uD-Mou"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kOr-O3-rLB" customClass="DrawingView" customModule="KananAhmadov_Lab_3" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="393" height="517"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="e0N-Tb-E6X" appends="YES" id="sQL-4L-m5A"/>
+                                    <outletCollection property="gestureRecognizers" destination="Bi1-BR-FTl" appends="YES" id="8Rd-o3-ftd"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oc9-gR-s0Z">
+                                <rect key="frame" x="0.0" y="604" width="393" height="248"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vJE-Gu-W3E">
+                                        <rect key="frame" x="21" y="185" width="351" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Draw"/>
+                                            <segment title="Move"/>
+                                            <segment title="Erase"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="modeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="KXc-Ab-Xzu"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hGI-Fp-pK0">
+                                        <rect key="frame" x="21" y="141" width="351" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Rectangle"/>
+                                            <segment title="Circle"/>
+                                            <segment title="Triangle"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="shapeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xs3-Lz-OXE"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRj-rt-pCd">
+                                        <rect key="frame" x="31" y="30" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="redButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b5u-n3-NDR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYu-EA-NVl">
+                                        <rect key="frame" x="89" y="30" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="orangeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hXD-fi-dqa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lo-ac-cAS">
+                                        <rect key="frame" x="147" y="30" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="yellowButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yeF-dY-4tL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mb8-yK-Wzm">
+                                        <rect key="frame" x="205" y="30" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="greenButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LYM-Fk-OzO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swl-Et-TfK">
+                                        <rect key="frame" x="263" y="30" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="blueButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9sJ-Bb-sdT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsh-aN-kd8">
+                                        <rect key="frame" x="321" y="30" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="purpleButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HUn-od-TaQ"/>
+                                        </connections>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4Hs-uY-ZiZ">
+                                        <rect key="frame" x="21" y="96" width="340" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Solid"/>
+                                            <segment title="Outlined"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="shapeStyleChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="V2g-Yk-ADO"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <gestureRecognizers/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <connections>
+                        <outlet property="blueButton" destination="swl-Et-TfK" id="OHt-v6-7m5"/>
+                        <outlet property="clearButton" destination="syV-yF-LYq" id="xyp-aX-I67"/>
+                        <outlet property="drawingView" destination="kOr-O3-rLB" id="KvC-ZH-CtR"/>
+                        <outlet property="duplicateButton" destination="RBV-Qd-9lw" id="D7F-OR-HJ9"/>
+                        <outlet property="greenButton" destination="Mb8-yK-Wzm" id="LQJ-m3-geb"/>
+                        <outlet property="modeSegmentedControl" destination="vJE-Gu-W3E" id="H7u-8S-Ybx"/>
+                        <outlet property="orangeButton" destination="WYu-EA-NVl" id="z1I-bY-6EU"/>
+                        <outlet property="purpleButton" destination="Bsh-aN-kd8" id="p81-bm-0Yo"/>
+                        <outlet property="redButton" destination="iRj-rt-pCd" id="UEU-Yg-eDO"/>
+                        <outlet property="redoButton" destination="mes-5H-vZc" id="xKm-m3-YVo"/>
+                        <outlet property="saveButton" destination="34K-jg-ZiE" id="4x2-6Y-V3K"/>
+                        <outlet property="shapeSegmentedControl" destination="hGI-Fp-pK0" id="80E-EH-FLo"/>
+                        <outlet property="shapeStyleSegmentedControl" destination="4Hs-uY-ZiZ" id="LUi-Ao-tEX"/>
+                        <outlet property="undoButton" destination="gaj-lm-FTQ" id="UI7-vU-Aho"/>
+                        <outlet property="yellowButton" destination="5lo-ac-cAS" id="SFw-wG-gCQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="e0N-Tb-E6X">
+                    <connections>
+                        <action selector="handlePinch:" destination="BYZ-38-t0r" id="aOg-OH-aLT"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="Bi1-BR-FTl">
+                    <connections>
+                        <action selector="handleRotation:" destination="BYZ-38-t0r" id="MKI-UQ-QiC"/>
+                    </connections>
+                </rotationGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="12.977099236641221" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.uturn.backward.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="arrow.uturn.forward.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="clear.fill" catalog="system" width="128" height="114"/>
+        <image name="doc.on.doc.fill" catalog="system" width="112" height="128"/>
+        <image name="square.and.arrow.down.fill" catalog="system" width="121" height="128"/>
+        <systemColor name="separatorColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
