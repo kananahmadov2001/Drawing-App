@@ -11,7 +11,7 @@ Note: I developed this project as my Lab 3 assignment for my Mobile App. Dev. cl
 The Drawing App is an interactive mobile application that allows users to create, manipulate, and display shapes dynamically. This project was designed to practice advanced mobile app development with Swift, focusing on custom UI elements, state management, and object-oriented design patterns. The app provides an engaging drawing experience with features like shape selection, resizing, and interactive manipulation.
 
 <div align="center">
-    <img src="Drawing-Vertical.png" alt="screenshot" height="700px">
+    <img src="Drawing-app-screenshot.png" alt="screenshot" height="700px">
 </div>
 
 ## Technologies/Frameworks Used
